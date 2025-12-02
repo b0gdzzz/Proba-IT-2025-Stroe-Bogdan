@@ -1,15 +1,19 @@
 import express from 'express';
+import cors from 'cors';
 import notesRoutes from './routes/notesRoutes.js';
 import { connectDB } from './Config/db.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-console.log(process.env.MONGO_URI);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+app.use(cors({
+  origin: 'http://localhost:5173', // Vite dev server
+  credentials: true
+}));
 app.use(express.json()); // Parse JSON request bodies
 
 connectDB();
