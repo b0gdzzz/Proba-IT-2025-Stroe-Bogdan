@@ -12,12 +12,12 @@ const api = axios.create({
   withCredentials: true,
 });
 
-// API methods for grills/notes
+// API methods for grills
 export const grillsAPI = {
   // Get all grills
   getAll: async () => {
     try {
-      const response = await api.get('/notes');
+      const response = await api.get('/grills');
       return response.data;
     } catch (error) {
       console.error('Error fetching grills:', error);
@@ -28,7 +28,7 @@ export const grillsAPI = {
   // Get single grill by ID
   getById: async (id) => {
     try {
-      const response = await api.get(`/notes/${id}`);
+      const response = await api.get(`/grills/${id}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching grill:', error);
@@ -39,7 +39,7 @@ export const grillsAPI = {
   // Create new grill
   create: async (grillData) => {
     try {
-      const response = await api.post('/notes', grillData);
+      const response = await api.post('/grills', grillData);
       return response.data;
     } catch (error) {
       console.error('Error creating grill:', error);
@@ -50,7 +50,7 @@ export const grillsAPI = {
   // Update grill
   update: async (id, grillData) => {
     try {
-      const response = await api.put(`/notes/${id}`, grillData);
+      const response = await api.put(`/grills/${id}`, grillData);
       return response.data;
     } catch (error) {
       console.error('Error updating grill:', error);
@@ -61,7 +61,7 @@ export const grillsAPI = {
   // Delete grill
   delete: async (id) => {
     try {
-      const response = await api.delete(`/notes/${id}`);
+      const response = await api.delete(`/grills/${id}`);
       return response.data;
     } catch (error) {
       console.error('Error deleting grill:', error);

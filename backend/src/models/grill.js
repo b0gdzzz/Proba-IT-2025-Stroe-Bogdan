@@ -1,26 +1,32 @@
 import mongoose from "mongoose";
 
 const grillSchema = new mongoose.Schema({
-    title: {
+    name: {
         type: String,
-        required: true
+        required: true,
+        trim: true
     },
     description: {
         type: String,
         required: true
     },
-    likes: {
-        type: Array,
+    imageUrl: {
+        type: String,
+        default: null // Optional - for bonus feature
+    },
+    likes: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }],
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true
     },
     location: {
         type: String,
-        required: true
-    },
-    creator: {
-        type: String,
-        required: true
-    },
+        trim: true
+    }
 },
 {
     timestamps: true

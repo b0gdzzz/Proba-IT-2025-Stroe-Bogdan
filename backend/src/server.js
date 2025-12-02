@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import notesRoutes from './routes/notesRoutes.js';
+import grillsRoutes from './routes/grillsRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import { connectDB } from './Config/db.js';
 import dotenv from 'dotenv';
@@ -20,7 +20,7 @@ app.use(express.json()); // Parse JSON request bodies
 connectDB();
 
 app.use("/api/auth", authRoutes);
-app.use("/api/notes", notesRoutes);
+app.use("/api/grills", grillsRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
