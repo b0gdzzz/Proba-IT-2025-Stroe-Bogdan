@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import notesRoutes from './routes/notesRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import { connectDB } from './Config/db.js';
 import dotenv from 'dotenv';
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(express.json()); // Parse JSON request bodies
 
 connectDB();
 
+app.use("/api/auth", authRoutes);
 app.use("/api/notes", notesRoutes);
 
 app.listen(PORT, () => {
