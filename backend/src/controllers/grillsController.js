@@ -136,7 +136,6 @@ export async function toggleLike(req, res) {
     }
 }
 
-// Get leaderboard (top 3 grills by likes)
 export async function getLeaderboard(req, res) {
     try {
         const topGrills = await Grill.find()
