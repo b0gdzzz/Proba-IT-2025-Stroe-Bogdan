@@ -44,9 +44,9 @@
   - [ ] Redirect to profile on success
 
 ### Day 2 (Dec 3) - Profile & Posting
-- [ ] **Backend: Profile Endpoints**
-  - [ ] GET /api/users/profile (get logged-in user data)
-  - [ ] GET /api/users/:id/grills (get user's grills)
+- [x] **Backend: Profile Endpoints**
+  - [x] GET /api/auth/profile (get logged-in user data)
+  - [x] GET /api/users/:id/grills (get user's grills)
 - [ ] **Frontend: Profile Page**
   - [ ] User info card (name, email, phone)
   - [ ] Display user's posted grills in grid
@@ -56,24 +56,24 @@
   - [ ] Connect to backend POST /api/grills
   - [ ] Success/error handling
   - [ ] Refresh grill list after posting
-- [ ] **Backend: Grill Endpoints**
-  - [ ] POST /api/grills (create new grill)
-  - [ ] GET /api/grills (get all grills)
-  - [ ] GET /api/grills/:id (get single grill)
+- [x] **Backend: Grill Endpoints**
+  - [x] POST /api/grills (create new grill)
+  - [x] GET /api/grills (get all grills)
+  - [x] GET /api/grills/:id (get single grill)
 
 ### Day 3 (Dec 4) - Voting & Leaderboard
-- [ ] **Backend: Voting System**
-  - [ ] Add "likes" array to Grill schema (array of user IDs)
-  - [ ] POST /api/grills/:id/like (toggle like)
-  - [ ] Ensure user can only like once per grill
-  - [ ] Update like count
+- [x] **Backend: Voting System**
+  - [x] Add "likes" array to Grill schema (array of user IDs)
+  - [x] POST /api/grills/:id/like (toggle like)
+  - [x] Ensure user can only like once per grill
+  - [x] Update like count
 - [ ] **Frontend: Like Button**
   - [ ] MIC button on each grill card
   - [ ] Toggle between pink (unliked) and brown (liked)
   - [ ] Update like count in real-time
   - [ ] Only allow logged-in users to like
-- [ ] **Backend: Leaderboard**
-  - [ ] GET /api/grills/leaderboard (top 3 by likes)
+- [x] **Backend: Leaderboard**
+  - [x] GET /api/grills/leaderboard (top 3 by likes)
 - [ ] **Frontend: Leaderboard Section**
   - [ ] "THE BEST GRILLS" section on Best Grills page
   - [ ] Display top 3 grills
