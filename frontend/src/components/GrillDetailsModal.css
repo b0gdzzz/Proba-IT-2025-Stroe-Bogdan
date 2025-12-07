@@ -1,0 +1,377 @@
+/* Modal Overlay */
+.grill-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Content */
+.grill-modal-content {
+  background: white;
+  border-radius: 1.25rem;
+  max-width: 50rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 4px 12px 20px 0px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.grill-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+}
+
+.grill-modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: rotate(90deg);
+}
+
+/* Image Container */
+.grill-modal-image-container {
+  width: 100%;
+  height: 25rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  border-radius: 1.25rem 1.25rem 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.grill-modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grill-modal-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  opacity: 0.3;
+}
+
+/* Modal Body */
+.grill-modal-body {
+  padding: 2rem;
+}
+
+.grill-modal-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #721d08;
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+.grill-modal-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  white-space: pre-wrap;
+}
+
+/* Meta Information */
+.grill-modal-meta {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(114, 29, 8, 0.1);
+  border-radius: 1rem;
+  flex-wrap: wrap;
+}
+
+.grill-modal-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-icon {
+  font-size: 1.25rem;
+}
+
+.meta-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+/* Form Inputs (Edit Mode) */
+.grill-modal-input,
+.grill-modal-textarea {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  border: 0.125rem solid #e0e0e0;
+  border-radius: 0.938rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.grill-modal-input:focus,
+.grill-modal-textarea:focus {
+  outline: none;
+  border-color: #721d08;
+  box-shadow: 0 0 0 0.25rem rgba(114, 29, 8, 0.1);
+}
+
+.grill-modal-input::placeholder,
+.grill-modal-textarea::placeholder {
+  color: #999;
+}
+
+.grill-modal-textarea {
+  resize: vertical;
+  min-height: 10rem;
+  line-height: 1.6;
+}
+
+/* Action Buttons */
+.grill-modal-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.grill-modal-btn {
+  flex: 1;
+  min-width: 10rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 0.938rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.grill-modal-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.grill-modal-btn-edit {
+  background: linear-gradient(135deg, #721d08 0%, #ff7730 100%);
+  color: white;
+  box-shadow: 4px 7px 10px 0px rgba(114, 29, 8, 0.3);
+}
+
+.grill-modal-btn-edit:hover:not(:disabled) {
+  transform: translateY(-0.125rem);
+  box-shadow: 4px 10px 15px 0px rgba(114, 29, 8, 0.4);
+}
+
+.grill-modal-btn-delete {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  box-shadow: 0 0.5rem 1rem rgba(245, 87, 108, 0.3);
+}
+
+.grill-modal-btn-delete:hover:not(:disabled) {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.75rem 1.5rem rgba(245, 87, 108, 0.4);
+}
+
+.grill-modal-btn-save {
+  background: #009c41;
+  color: white;
+  box-shadow: 4px 7px 10px 0px rgba(0, 156, 65, 0.3);
+}
+
+.grill-modal-btn-save:hover:not(:disabled) {
+  background: #00b84d;
+  transform: translateY(-0.125rem);
+  box-shadow: 4px 10px 15px 0px rgba(0, 156, 65, 0.4);
+}
+
+.grill-modal-btn-cancel {
+  background: #e0e0e0;
+  color: #666;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.grill-modal-btn-cancel:hover:not(:disabled) {
+  background: #d0d0d0;
+  transform: translateY(-0.125rem);
+}
+
+/* Scrollbar Styling */
+.grill-modal-content::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.grill-modal-content::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 0 1.5rem 1.5rem 0;
+}
+
+.grill-modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #721d08 0%, #ff7730 100%);
+  border-radius: 0.25rem;
+}
+
+.grill-modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ff7730 0%, #721d08 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grill-modal-content {
+    max-height: 95vh;
+    border-radius: 1rem;
+  }
+
+  .grill-modal-image-container {
+    height: 18rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .grill-modal-body {
+    padding: 1.5rem;
+  }
+
+  .grill-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .grill-modal-meta {
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .grill-modal-actions {
+    flex-direction: column;
+  }
+
+  .grill-modal-btn {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grill-modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .grill-modal-image-container {
+    height: 15rem;
+  }
+
+  .grill-modal-body {
+    padding: 1rem;
+  }
+
+  .grill-modal-title {
+    font-size: 1.25rem;
+  }
+
+  .grill-modal-placeholder {
+    font-size: 5rem;
+  }
+}
+
+/* Image Upload Overlay Styles */
+.image-upload-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-input-hidden {
+  display: none;
+}
+
+.image-upload-overlay-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: #721d08;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.image-upload-overlay-button:hover {
+  background: white;
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}

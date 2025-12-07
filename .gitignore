@@ -5,6 +5,7 @@
 .env.test.local
 .env.production.local
 
+TASKS.md
 IMPLEMENTATION_PLAN.md
 
 # Dependencies
